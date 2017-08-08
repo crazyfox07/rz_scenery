@@ -2,7 +2,19 @@
 {% block title %}home_page{% endblock %}
 {% block content %}
 <h1>home</h1>
-{% for photo in photo_list %}
-<p>{{ photo }}</p>
-{% endfor %}
+    <div>
+        <table>
+                {% for photo_tr in photo_list %}
+                    <tr>
+                        {% for photo_td in photo_tr %}
+                            <td>
+                                <img class="photo" src="{{ photo_td }}" style="background-color: rgb(182, 173, 173); width: 360px; height: 200px;" >
+                            </td>
+                        {% endfor %}
+
+                    </tr>
+                {%endfor%}
+        </table>
+    </div>
+
 {% endblock %}

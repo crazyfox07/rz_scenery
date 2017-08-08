@@ -4,11 +4,35 @@
 
 <head>
     <meta charset="UTF-8">
+    <style type="text/css">
+         ul{
+
+            width:100%;/*这里设置为确定的值也可以*/
+            height:20px;
+             text-align : center;
+
+        }
+        li{
+            display:inline;
+            margin-right:8px;
+            padding:2px;
+        }
+    </style>
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
 
     {% block content %}{% endblock %}
+    <div class="paginator" >
+         <ul>
+               <li class="page"><a href="?page=1" class="pure-menu-link" >首页</a></li>
+               <li class="page"><a href="?page={{ current_page|add:-1 }}" class="pure-menu-link">< pre</a></li>
+                <li class="page"><a href="?page={{ current_page|add:1 }}" class="pure-menu-link">next ></a></li>
+               <li class="page"><a href="?page={{ total_page }}" class="pure-menu-link">尾页</a></li>
+         </ul>
+
+    </div>
+
 
 </body>
 </html>
